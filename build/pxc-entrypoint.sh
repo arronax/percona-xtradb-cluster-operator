@@ -480,4 +480,4 @@ if [ "$1" = 'mysqld' -a -z "$wantHelp" ]; then
 	fi
 fi
 
-exec "$@" $wsrep_start_position_opt
+exec env LD_PRELOAD=/usr/lib64/libjemalloc.so.2 "$@" $wsrep_start_position_opt
